@@ -1,5 +1,4 @@
-import React from 'react';
-import { FlexStyled } from './styles';
+import styled from 'styled-components';
 
 export interface IFlex {
    gap?: string,
@@ -9,12 +8,13 @@ export interface IFlex {
    p?: string
 }
 
-const Flex: React.FC<IFlex> = ({ children, ...props }) => {
-   return (
-      <FlexStyled {...props}>
-         {children}
-      </FlexStyled>
-   )
-}
+const Flex = styled.div<IFlex>`
+display: flex;
+flex-direction: ${({ direction }) => direction || 'row'};
+justify-content: ${({ jf }) => jf || 'flex-start'};
+align-items: ${({ ai }) => ai || 'start'};
+padding: ${({ p }) => p && p || 0};
+gap: ${({ gap }) => gap || 0};
+`
 
 export default Flex

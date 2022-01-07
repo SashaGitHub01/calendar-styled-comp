@@ -1,5 +1,4 @@
-import React from "react";
-import { SpanStyled } from "./styles";
+import styled, { css } from 'styled-components';
 
 export interface ISpan {
    fz?: string,
@@ -10,12 +9,18 @@ export interface ISpan {
    [i: string]: any
 }
 
-const Span: React.FC<ISpan> = ({ children, ...props }) => {
-   return (
-      <SpanStyled {...props}>
-         {children}
-      </SpanStyled>
-   )
-}
+export const Span = styled.span<ISpan>`
+${({ overflow }) => overflow
+      && css`
+white-space:nowrap;
+overflow: hidden;
+text-overflow: ellipsis;
+`}
 
-export default Span
+color: ${({ color, theme }) => (color && theme.font[color]) || theme.font.main};
+font-size: ${({ fz, theme }) => fz || theme.fontSize};
+line-height: ${({ lh }) => lh || 1};
+font-weight: ${({ fw }) => fw || 400};
+`
+
+export default Span;

@@ -28,7 +28,7 @@ const PopupContent = () => {
 
    return (
       <Wrap>
-         <Flex ai="center" gap="0.5rem">
+         <Flex ai="center" gap="0.5rem" p="1.2rem">
             <Close size={'2rem'} className='icon' />
             <Span fz="1.6rem" onClick={handleLogout}>
                Выйти

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Flex from '../../Flex/Flex';
 import Span from '../../Span/Span';
 
 export const HeaderStyled = styled.header`

@@ -15,7 +15,7 @@ const Header = () => {
    const nav = useNavigate();
 
    const handleClick = () => {
-      nav('/login')
+      nav('/login');
    }
 
    return (
@@ -31,7 +31,7 @@ const Header = () => {
                   ? <Button onClick={handleClick}>
                      Войти
                   </Button>
-                  : <Flex gap="3rem" ai="center">
+                  : <Flex gap="3rem" ai="center" p="1.2rem">
                      <Popover content={PopupContent} >
                         <Span fz="1.6rem" fw={500} color='secondary'>
                            {user?.username}
