@@ -9,7 +9,8 @@ export const myTheme = {
       danger: 'rgb(248, 99, 94)',
       danger_hover: 'rgb(255, 153, 160)',
       border_light: 'rgba(156, 156, 156, 0.678)',
-      border: 'rgba(130, 130, 130, 1)'
+      border: 'rgba(130, 130, 130, 1)',
+      grey_light: 'rgba(230, 230, 230, 0.5)'
    },
 
    font: {

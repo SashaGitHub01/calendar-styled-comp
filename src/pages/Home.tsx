@@ -25,9 +25,11 @@ const Home = () => {
       isCreating, createError, isFetching, events, removeError, isRemoving
    } = useTypedSelector(state => state.events);
 
+   const isAuth = useTypedSelector(state => state.auth.isAuth)
+
    useEffect(() => {
       dispatch(fetchEvents());
-   }, [])
+   }, [isAuth])
 
 
    return (

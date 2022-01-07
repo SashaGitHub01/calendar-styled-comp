@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 import { AuthService } from "../../API/AuthService";
 import { ILoginBody } from "../../API/requests/ILoginBody";
-import { fetchingLogin, fetchUser, setLoginSuccess, setLoginErr, setUserErr, setUserSuccess } from "../actions/authActions";
+import { fetchingLogin, fetchUser, setLoginSuccess, setLoginErr, setUserErr, setUserSuccess, logoutUser } from "../actions/authActions";
 import { ActionsType } from "../reducers/auth/types";
 
 //auth
@@ -36,6 +36,19 @@ export const fetchLogin = (body: ILoginBody) => {
 
       } catch (err) {
          dispatch(setLoginErr('Ошибка'))
+      }
+   }
+}
+
+export const fetchLogout = () => {
+   return async (dispatch: Dispatch<ActionsType>) => {
+      try {
+         await AuthService.logout();
+
+         dispatch(logoutUser());
+
+      } catch (err) {
+         console.log(err)
       }
    }
 }

@@ -6,6 +6,9 @@ import Button from "../../Button/Button";
 import { Link, useNavigate } from "react-router-dom";
 import Span from "../../Span/Span";
 import { useTypedSelector } from "../../../hooks/useTypedSelector";
+import { useDispatch } from "react-redux";
+import { Popover } from "antd";
+import PopupContent from "../Popover/Popover";
 
 const Header = () => {
    const { isAuth, user } = useTypedSelector(state => state.auth);
@@ -29,9 +32,11 @@ const Header = () => {
                      Войти
                   </Button>
                   : <Flex gap="3rem" ai="center">
-                     <Span fz="1.6rem" fw={500} color='secondary'>
-                        {user?.username}
-                     </Span>
+                     <Popover content={PopupContent} >
+                        <Span fz="1.6rem" fw={500} color='secondary'>
+                           {user?.username}
+                        </Span>
+                     </Popover>
                   </Flex>}
             </Nav>
          </Flex>

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Span from '../../Span/Span';
 
 export const HeaderStyled = styled.header`
 display: flex;
@@ -23,6 +24,9 @@ export const Logo = styled.img`
 export const Nav = styled.nav`
 display: flex;
 align-items: center;
-`
 
+& ${Span.toString()} {
+   cursor: pointer;
+}
+`
 

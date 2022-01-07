@@ -57,7 +57,6 @@ const EventsCalendar: React.FC<IEventsCalendar> = ({
       )
    }
 
-
    const handleOpen = () => {
       setVisible(true)
    }

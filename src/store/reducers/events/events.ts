@@ -25,7 +25,8 @@ export const eventsReducer = (state = initialState, action: ActionsType): IState
          return {
             ...state,
             error: action.payload,
-            isFetching: false
+            isFetching: false,
+            events: []
          }
 
       case Actions.FETCH_EVENTS:
