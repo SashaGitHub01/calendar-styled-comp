@@ -6,25 +6,25 @@ import Span from "../../Span/Span";
 import { IoMdClose as Close } from 'react-icons/io';
 import styled from "styled-components";
 
+const Wrap = styled.div`
+cursor: pointer;
+width: 100%;
+
+& .icon {
+color: red;
+}
+
+&:hover {
+text-decoration: underline;
+}
+`
+
 const PopupContent = () => {
    const dispatch = useDispatch();
 
    const handleLogout = () => {
       dispatch(fetchLogout())
    }
-
-   const Wrap = styled.div`
-      cursor: pointer;
-      width: 100%;
-
-   & .icon {
-      color: red;
-   }
-
-      &:hover {
-      text-decoration: underline;
-      }
-   `
 
    return (
       <Wrap>
